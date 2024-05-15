@@ -20,10 +20,10 @@ int main()
     scanf("%d",&position);
 
 
-    for(int i=position; i>=size; i++)
+    for(int i=size-1; i>=position; i--)
     {
 
-        arr[i]=arr[i+1];
+        arr[i+1]=arr[i];
     }
 
 
@@ -32,6 +32,7 @@ int main()
 
 
     arr[position] = element;
+    size++;
     printf("\nVale is %d : ",arr[position]);
 
     printf("\n\n\nThe Updated Array is : ");
