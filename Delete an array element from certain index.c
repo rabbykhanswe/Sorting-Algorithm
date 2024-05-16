@@ -4,13 +4,13 @@
 int main() {
     int arr[] = {1, 2, 3, 4, 5, 6, 8, 9, 11, 15, 14};
     int size = sizeof(arr) / sizeof(arr[0]);
-    int position, element;
+    int position;
 
     for(int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
 
-    printf("\nWhich index you want to add an element : ");
+    printf("\nWhich index you want to delete : ");
     scanf("%d", &position);
 
     for(int i=position; i<=size; i++)
