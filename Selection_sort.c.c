@@ -1,61 +1,71 @@
 #include<stdio.h>
 #include<conio.h>
 
-void swap(int array[], int i, int min)
+//swap function
+void swap(int arr[], int i, int min)
 {
-    int temp = array[i];
-    array[i] = array[min];
-    array[min] = temp;
-
+    int temp = arr[i];
+    arr[i] = arr[min];
+    arr[min] = temp;
 }
 
-void selection_sort(int array[], int size)
+//selection sorting function
+void selection_sorting(int arr[], int size)
 {
-    for(int i=0; i<size-1; i++)
+    for(int i = 0; i < size-1 ; i++)
     {
         int min = i;
 
-        for (int j = i+1; j<size; j++)
+        for(int j = i+1; j < size; j++)
         {
-            if(array[j] < array[min])
+            if(arr[j] < arr[min])
             {
                 min = j;
-
             }
 
-            if(min != i)
+            if(arr[min] != i)
             {
-
-                swap(array, i, min);
+                swap(arr, i, min);
             }
-
         }
     }
-
-
 }
 
-void print_array(int array[], int size)
+
+//A function for printing array
+void print_arr(int arr[], int size)
 {
     printf("Your Sorted Array is : ");
 
-    for(int i = 0; i<size; i++)
+    for(int i = 0; i < size; i++)
     {
-        printf("%d ",array[i]);
+        printf("%d ",arr[i]);
     }
-
 }
+
+/*main function
+from where the program will be start*/
 int main()
 {
+    int size;
 
-    int array[] = {12,45,15,40,55,1,555,453,100};
+    printf("How many digit you want to enter into your array : ");
+    scanf("%d",&size);
 
-    int size = sizeof(array)/array[0];
+    int arr[size];
 
-    selection_sort(array, size);
+    printf("Enter Your Array Value : ");
 
-    print_array(array, size);
+    for(int i = 0; i < size; i++)
+    {
+        scanf("%d",&arr[i]);
+
+    }
 
 
-    getch();
+    selection_sorting(arr, size);
+    print_arr(arr, size);
+
+
+getch();
 }
