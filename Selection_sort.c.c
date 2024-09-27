@@ -23,7 +23,7 @@ void selection_sorting(int arr[], int size)
                 min = j;
             }
 
-            if(arr[min] != i)
+            if(min != i)
             {
                 swap(arr, i, min);
             }
